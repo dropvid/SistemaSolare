@@ -45,7 +45,7 @@ const skyMaterial = new THREE.MeshBasicMaterial({
 const sky = new THREE.Mesh(skyGeometry, skyMaterial);
 scene.add(sky);
 
-// Funzione di caricamento delle texture
+// Funzione di caricamento delle texture per i pianeti
 const textureLoader = new THREE.TextureLoader();
 
 // Dati dei pianeti con le texture locali
@@ -89,8 +89,8 @@ function animate() {
 
     // Aggiorna il tempo per il movimento dei pianeti
     //time += 0.01;
-    time += 3.5;
-    // Muove ogni pianeta lungo l'orbita
+    time += 1.5;
+     // Muove ogni pianeta lungo l'orbita
     planets.forEach(({ mesh, data }) => {
         mesh.position.x = Math.cos(time * data.speed) * data.distance;
         mesh.position.z = Math.sin(time * data.speed) * data.distance;
